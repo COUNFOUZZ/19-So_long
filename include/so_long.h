@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/05 10:33:46 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/05 21:55:32 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,5 +117,10 @@ void	ft_init_lenline_nl(t_game *g);
 
 /*		srcs/map_utils		*/
 void	ft_check_map(t_game *g);
+
+int		key_pressed(int keycode, t_game *g);
+void	ft_img(t_game *g, char *path, int *width, int *height);
+int		red_cross(void);
+void	ft_print_map1(t_game *g);
 
 #endif

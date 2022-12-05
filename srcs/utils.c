@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/05 10:31:18 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/05 14:41:47 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,40 +85,4 @@ void	ft_path_map(const char *dir, const char *argv, t_game *g)
 		g->argv[i] = argv[j];
 		i++;
 	}
-}
-
-
-int	red_cross(void)
-{
-	exit(0);
-	return (0);
-}
-
-void	ft_img(t_game *g, char *path, int *width, int *height)
-{
-	g->img.path = path;
-	g->img.img = mlx_xpm_file_to_image(g->mlx, g->img.path,
-			width, height);
-}
-
-int	key_pressed(int keycode, t_game *g)
-{
-	int	move;
-
-	move = 10;
-	if (keycode == KEY_ESC)
-		exit (0);
-	else if (keycode == KEY_W || keycode == KEY_UP)
-		g->player.pos_y = g->player.pos_y - move;
-	else if (keycode == KEY_S || keycode == KEY_DOWN)
-		g->player.pos_y = g->player.pos_y + move;
-	else if (keycode == KEY_D || keycode == KEY_RIGHT)
-		g->player.pos_x = g->player.pos_x + move;
-	else if (keycode == KEY_A || keycode == KEY_LEFT)
-		g->player.pos_x = g->player.pos_x - move;
-	ft_img(g, "./img/floor.xpm", &(g->img).img_width, &(g->img).img_height);
-	mlx_clear_window(g->mlx, g->mlx_win);
-	mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.img, g->player.pos_x, g->player.pos_y);
-	printf("\nKey pressed = [%d]\n", keycode);
-	return (0);
 }
