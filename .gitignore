@@ -1,0 +1,6 @@
+.vscode
+*.a
+*.dSYM
+*.o
+so_long
+OLD_*
