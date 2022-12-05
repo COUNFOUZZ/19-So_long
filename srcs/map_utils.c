@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/05 09:58:53 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/05 13:57:05 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	ft_check_map(t_game *g)
 			else if (g->map.map[i][j] == 'C')
 				g->check.nbr_coin++;
 		}
-		printf("%s", g->map.map[i]);
 	}
 	printf("x = %d\ty = %d\n", g->player.pos_x, g->player.pos_y);
 	ft_err_check_map(g);
