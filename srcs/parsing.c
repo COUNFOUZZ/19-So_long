@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:58:01 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/04 22:09:23 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/06 11:02:15 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,5 @@ void	ft_parsing_map(t_game *g)
 		ft_error(fd, NULL, NULL, ERR_PATH);
 	ft_cut_parsing_map(fd, g);
 	close(fd);
+	ft_free_tab(g->argv, NULL);
 }
