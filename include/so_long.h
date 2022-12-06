@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/05 23:56:54 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/06 10:42:45 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ typedef struct s_player
 {
 	int	pos_x;
 	int	pos_y;
+	int	coin_collected;
 }	t_player;
 
 typedef struct s_img

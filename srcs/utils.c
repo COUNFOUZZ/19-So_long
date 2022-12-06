@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/05 14:41:47 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/06 11:02:36 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	init_struct(t_game *g)
 	g->mlx_win = mlx_new_window(g->mlx, WIN_WIDTH, WIN_HEIGHT, GAME_TITLE);
 	g->player.pos_x = 0;
 	g->player.pos_y = 0;
+	g->player.coin_collected = 0;
 	ft_init_lenline_nl(g);
 	ft_parsing_map(g);
 	g->check.nbr_coin = 0;
