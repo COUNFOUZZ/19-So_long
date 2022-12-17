@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/06 10:42:45 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/10 16:23:23 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ typedef struct s_checkmap
 	int	nbr_coin;
 	int	nbr_player;
 	int	nbr_exit;
+	int	exit_pos_x;
+	int	exit_pos_y;
 }	t_checkmap;
 
 typedef struct s_map

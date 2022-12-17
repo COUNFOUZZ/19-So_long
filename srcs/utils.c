@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/06 11:02:36 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/09 21:15:31 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	init_struct(t_game *g)
 	g->check.nbr_coin = 0;
 	g->check.nbr_player = 0;
 	g->check.nbr_exit = 0;
+	g->check.exit_pos_x = 0;
+	g->check.exit_pos_y = 0;
 	ft_check_map(g);
 }
 
