@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:58:01 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/06 11:02:15 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/17 17:13:47 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,18 @@ static void	ft_cut_parsing_map(int fd, t_game *g)
 	while (1)
 	{
 		str = get_next_line(fd);
-		j = 0;
+		j = -1;
 		if (!str)
 			break ;
 		g->map.map[i] = malloc(sizeof(char) * g->map.lenline + 1);
 		if (!g->map.map[i])
 			return ;
-		while (str[j])
+		while (str[++j])
 		{
+			if (str[j] != '0' && str[j] != '1' && str[j] != 'P' && str[j] != 'C'
+				&& str[j] != 'E' && str[j] != '\n')
+				ft_error(-1, str, NULL, ERR_UKNOWN_CHAR_MAP);
 			g->map.map[i][j] = str[j];
-			j++;
 		}
 		g->map.map[i][j] = '\0';
 		i++;

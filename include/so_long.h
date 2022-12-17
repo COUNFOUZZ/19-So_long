@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/17 16:21:16 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/17 17:22:49 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,14 @@ Only one exit on the map is allowed"
 # define ERR_NBR_EXIT2 "Not enough exit on the map !\n\
 Only one exit on the map is allowed"
 # define ERR_MISSING_WALL "The map is not totally closed by walls !\n"
+# define ERR_UKNOWN_CHAR_MAP "Unknown character in the parsing of the map !\n\
+Please use only :\n\
+\t- \"0\" for the floor.\n\
+\t- \"1\" for the wall.\n\
+\t- \"P\" for the player.\n\
+\t- \"C\" for the collectible.\n\
+\t- \"E\" for the exit.\n\
+if you want to create your own map.\n"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
