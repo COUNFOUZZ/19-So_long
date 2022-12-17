@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/05 13:57:05 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/09 21:20:21 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	ft_check_wall(t_game *g)
 	int	j;
 
 	i = -1;
-	printf("%d\n", g->map.lenline);
 	while (g->map.map[++i])
 	{
 		j = -1;
@@ -46,6 +45,25 @@ static void	ft_err_check_map(t_game *g)
 		ft_error(-1, NULL, g->map.map, ERR_NBR_EXIT2);
 }
 
+static void	ft_init_pos_and_nbr_coins(t_game *g, char check, int x, int y)
+{
+	if (check == 'P')
+	{
+		g->check.nbr_player++;
+		g->player.pos_y = y;
+		g->player.pos_x = x;
+	}
+	else if (check == 'E')
+	{
+		g->check.nbr_exit++;
+		g->check.exit_pos_y = y;
+		g->check.exit_pos_x = x;
+	}
+	else if (check == 'C')
+		g->check.nbr_coin++;
+
+}
+
 void	ft_check_map(t_game *g)
 {
 	int	i;
@@ -58,17 +76,18 @@ void	ft_check_map(t_game *g)
 		while (g->map.map[i][++j])
 		{
 			if (g->map.map[i][j] == 'P')
-			{
-				g->check.nbr_player++;
-				g->player.pos_y = i;
-				g->player.pos_x = j;
-			}
+				ft_init_pos_and_nbr_coins(g, 'P', j, i);
 			else if (g->map.map[i][j] == 'E')
-				g->check.nbr_exit++;
+				ft_init_pos_and_nbr_coins(g, 'E', j, i);
 			else if (g->map.map[i][j] == 'C')
-				g->check.nbr_coin++;
+				ft_init_pos_and_nbr_coins(g, 'C', j, i);
 		}
 	}
-	printf("x = %d\ty = %d\n", g->player.pos_x, g->player.pos_y);
+	printf("Exit_pos:\n");
+	printf("y = %d\tx = %d\n", g->check.exit_pos_y, g->check.exit_pos_x);
+	printf("\nPlayer_pos:\n");
+	printf("y = %d\tx = %d\n", g->player.pos_y, g->player.pos_x);
+	printf("\nNbr_coins:\n");
+	printf("coins = %d\n", g->check.nbr_coin);
 	ft_err_check_map(g);
 }
