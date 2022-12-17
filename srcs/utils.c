@@ -48,6 +48,9 @@ void	init_struct(t_game *g)
 	g->player.pos_x = 0;
 	g->player.pos_y = 0;
 	g->player.coin_collected = 0;
+	g->player.move = 0;
+	g->player.x_before = 0;
+	g->player.y_before = 0;
 	ft_init_lenline_nl(g);
 	ft_parsing_map(g);
 	g->check.nbr_coin = 0;

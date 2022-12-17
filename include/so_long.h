@@ -81,9 +81,13 @@ typedef struct s_map
 
 typedef struct s_player
 {
-	int	pos_x;
-	int	pos_y;
-	int	coin_collected;
+	int		pos_x;
+	int		pos_y;
+	int		coin_collected;
+	int		x_before;
+	int		y_before;
+	int		move;
+	char	char_staged;
 }	t_player;
 
 typedef struct s_img
