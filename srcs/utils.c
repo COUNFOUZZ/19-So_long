@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/09 21:15:31 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/17 16:20:47 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ void	init_struct(t_game *g)
 	g->player.pos_y = 0;
 	g->player.coin_collected = 0;
 	g->player.move = 0;
-	g->player.x_before = 0;
-	g->player.y_before = 0;
 	ft_init_lenline_nl(g);
 	ft_parsing_map(g);
 	g->check.nbr_coin = 0;
