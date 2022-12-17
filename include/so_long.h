@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/10 16:23:23 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/17 16:21:16 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,6 @@ typedef struct s_player
 	int		pos_x;
 	int		pos_y;
 	int		coin_collected;
-	int		x_before;
-	int		y_before;
 	int		move;
 	char	char_staged;
 }	t_player;
