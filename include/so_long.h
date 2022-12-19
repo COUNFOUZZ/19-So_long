@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/17 17:22:49 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/19 20:24:00 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,20 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-# include <stdio.h>		// Need to be delete !
+
+/******************************************************************************/
+/*								NEED TO BE DELETE							  */
+/******************************************************************************/
+# include <stdio.h>			//	Need to be delete !!!
+# define BLACK "\x1b[30m"	//	Need to be delete !!!
+# define RED "\x1b[31m"		//	Need to be delete !!!
+# define GREEN "\x1b[32m"	//	Need to be delete !!!
+# define YELLOW "\x1b[33m"	//	Need to be delete !!!
+# define BLUE "\x1b[34m"	//	Need to be delete !!!
+# define PURPLE "\x1b[35m"	//	Need to be delete !!!
+# define CYAN "\x1b[36m"	//	Need to be delete !!!
+# define WHITE "\x1b[37m"	//	Need to be delete !!!
+# define NORMAL "\x1b[m"	//	Need to be delete !!!
 
 /******************************************************************************/
 /*								BASIC SETTINGS								  */
@@ -30,7 +43,6 @@
 /******************************************************************************/
 /*								ERROR MESSAGES								  */
 /******************************************************************************/
-# define ERR_MALLOC "Malloc error !\n"
 # define ERR_BAD_ARG "Invalid number of arguments !\n\
 You can find all maps in \"maps\" directory\n\
 The program should be launched like this -> \"./so_long MapName.ber\"\n"
@@ -47,13 +59,12 @@ Only one exit on the map is allowed"
 Only one exit on the map is allowed"
 # define ERR_MISSING_WALL "The map is not totally closed by walls !\n"
 # define ERR_UKNOWN_CHAR_MAP "Unknown character in the parsing of the map !\n\
-Please use only :\n\
+If you want to create your own map, please use only :\n\
 \t- \"0\" for the floor.\n\
 \t- \"1\" for the wall.\n\
 \t- \"P\" for the player.\n\
 \t- \"C\" for the collectible.\n\
-\t- \"E\" for the exit.\n\
-if you want to create your own map.\n"
+\t- \"E\" for the exit.\n"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
@@ -123,6 +134,7 @@ void	ft_error(int res, char *tab1, char **tab2, const char *error);
 
 /*		srcs/libft_utils.c		*/
 void	ft_putstr_fd(const char *s, int fd);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /*		srcs/parsing.c		*/
 void	ft_parsing_map(t_game *g);
