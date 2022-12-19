@@ -6,43 +6,11 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:54:56 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/17 16:43:50 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/19 20:16:57 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
-
-static void	ft_save_last_pos(char key, t_game *g)
-{
-	if (key == 'W')
-	{
-		if (g->map.map[g->player.pos_y - 1][g->player.pos_x])
-			g->player.char_staged = '0';
-		if (g->map.map[g->player.pos_y][g->player.pos_x] == g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
-			g->player.char_staged = 'E';
-	}
-	else if (key == 'S')
-	{
-		if (g->map.map[g->player.pos_y - 1][g->player.pos_x])
-			g->player.char_staged = '0';
-		if (g->map.map[g->player.pos_y][g->player.pos_x] == g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
-			g->player.char_staged = 'E';
-	}
-	else if (key == 'D')
-	{
-		if (g->map.map[g->player.pos_y][g->player.pos_x + 1])
-			g->player.char_staged = '0';
-		if (g->map.map[g->player.pos_y][g->player.pos_x] == g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
-			g->player.char_staged = 'E';
-	}
-	else if (key == 'A')
-	{
-		if (g->map.map[g->player.pos_y][g->player.pos_x - 1])
-			g->player.char_staged = '0';
-		if (g->map.map[g->player.pos_y][g->player.pos_x] == g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
-			g->player.char_staged = 'E';
-	}
-}
 
 static void	ft_exit_and_coin_collect(t_game *g)
 {
@@ -60,7 +28,6 @@ static void	ft_movement_y(char key, t_game *g)
 {
 	if (key == 'W')
 	{
-		ft_save_last_pos('W', g);
 		g->player.pos_y--;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
@@ -69,7 +36,6 @@ static void	ft_movement_y(char key, t_game *g)
 	}
 	else if (key == 'S')
 	{
-		ft_save_last_pos('S', g);
 		g->player.pos_y++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
@@ -82,7 +48,6 @@ static void	ft_movement_x(char key, t_game *g)
 {
 	if (key == 'D')
 	{
-		ft_save_last_pos('D', g);
 		g->player.pos_x++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
@@ -91,7 +56,6 @@ static void	ft_movement_x(char key, t_game *g)
 	}
 	else if (key == 'A')
 	{
-		ft_save_last_pos('A', g);
 		g->player.pos_x--;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
@@ -102,6 +66,9 @@ static void	ft_movement_x(char key, t_game *g)
 
 void	ft_movement(int keycode, t_game *g)
 {
+	g->player.char_staged = '0';
+	if (g->map.map[g->player.pos_y][g->player.pos_x] == g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
+			g->player.char_staged = 'E';
 	if (keycode == KEY_ESC)
 		exit (0);
 	else if (g->map.map[g->player.pos_y - 1][g->player.pos_x] != '1'
