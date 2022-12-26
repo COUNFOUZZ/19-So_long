@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:54:56 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/19 20:16:57 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/20 10:54:22 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static void	ft_exit_and_coin_collect(t_game *g)
 {
-	if (g->map.map[g->player.pos_y][g->player.pos_x] == 'E'
+	if (g->map.map[g->player.pos_y][g->player.pos_x] == 'C')
+			g->player.coin_collected++;
+	else if (g->map.map[g->player.pos_y][g->player.pos_x] == 'E'
 	&& g->check.nbr_coin == g->player.coin_collected)
 	{
 		ft_free_tab(NULL, g->map.map);
 		exit(EXIT_SUCCESS);
 	}
-	else if (g->map.map[g->player.pos_y][g->player.pos_x] == 'C')
-			g->player.coin_collected++;
 }
 
 static void	ft_movement_y(char key, t_game *g)
@@ -29,18 +29,18 @@ static void	ft_movement_y(char key, t_game *g)
 	if (key == 'W')
 	{
 		g->player.pos_y--;
+		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
 		g->map.map[g->player.pos_y + 1][g->player.pos_x] = g->player.char_staged;
-		g->player.move++;
 	}
 	else if (key == 'S')
 	{
 		g->player.pos_y++;
+		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
 		g->map.map[g->player.pos_y - 1][g->player.pos_x] = g->player.char_staged;
-		g->player.move++;
 	}
 }
 
@@ -49,18 +49,18 @@ static void	ft_movement_x(char key, t_game *g)
 	if (key == 'D')
 	{
 		g->player.pos_x++;
+		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
 		g->map.map[g->player.pos_y][g->player.pos_x - 1] = g->player.char_staged;
-		g->player.move++;
 	}
 	else if (key == 'A')
 	{
 		g->player.pos_x--;
+		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
 		g->map.map[g->player.pos_y][g->player.pos_x + 1] = g->player.char_staged;
-		g->player.move++;
 	}
 }
 
