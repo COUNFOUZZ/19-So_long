@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/09 21:20:21 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/26 23:11:11 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,10 @@ static void	ft_init_pos_and_nbr_coins(t_game *g, char check, int x, int y)
 		g->check.exit_pos_x = x;
 	}
 	else if (check == 'C')
+	{
 		g->check.nbr_coin++;
-
+		ft_add_back(g, x, y);
+	}
 }
 
 void	ft_check_map(t_game *g)
@@ -83,7 +85,9 @@ void	ft_check_map(t_game *g)
 				ft_init_pos_and_nbr_coins(g, 'C', j, i);
 		}
 	}
-	printf("Exit_pos:\n");
+	printf("Pos_coins:\n");
+	ft_print_list(g);
+	printf("\nExit_pos:\n");
 	printf("y = %d\tx = %d\n", g->check.exit_pos_y, g->check.exit_pos_x);
 	printf("\nPlayer_pos:\n");
 	printf("y = %d\tx = %d\n", g->player.pos_y, g->player.pos_x);
