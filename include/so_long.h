@@ -37,8 +37,6 @@
 /*								BASIC SETTINGS								  */
 /******************************************************************************/
 # define GAME_TITLE "So_long"
-# define WIN_WIDTH 800
-# define WIN_HEIGHT 600
 
 /******************************************************************************/
 /*								ERROR MESSAGES								  */
@@ -134,6 +132,8 @@ typedef struct s_game
 	void		*mlx;
 	void		*mlx_win;
 	char		*argv;
+	int			w_height;
+	int			w_width;
 	int			argv_malloc;
 	t_checkmap	check;
 	t_map		map;
