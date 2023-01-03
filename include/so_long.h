@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/03 17:11:48 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/03 17:36:10 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,7 @@ void	ft_movement(int keycode, t_game *g);
 /*		srcs/img.c		*/
 void	ft_init_img(t_game *g);
 void	ft_put_img_map(t_game *g);
+void	ft_put_img(t_game *g, int x, int y, const char c);
 
 int		key_pressed(int keycode, t_game *g);
 void	ft_img(t_game *g, char *path, int *width, int *height);
