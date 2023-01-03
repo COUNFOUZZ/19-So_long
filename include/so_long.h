@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/29 17:14:53 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/03 17:11:48 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ If you want to create your own map, please use only :\n\
 \t- \"P\" for the player.\n\
 \t- \"C\" for the collectible.\n\
 \t- \"E\" for the exit.\n"
+# define ERR_INIT_IMG "Missing img !"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
@@ -117,10 +118,15 @@ typedef struct s_player
 
 typedef struct s_img
 {
-	void	*img;
+	void	*wall;
+	void	*floor;
+	void	*player_floor;
+	void	*player_exit;
+	void	*dclose;
+	void	*dopen;
+	void	*coin;
 	int		img_width;
 	int		img_height;
-	char	*path;
 }	t_img;
 
 typedef struct s_game
@@ -159,6 +165,10 @@ void	ft_check_map(t_game *g);
 
 /*		srcs/movement.c		*/
 void	ft_movement(int keycode, t_game *g);
+
+/*		srcs/img.c		*/
+void	ft_init_img(t_game *g);
+void	ft_put_img_map(t_game *g);
 
 int		key_pressed(int keycode, t_game *g);
 void	ft_img(t_game *g, char *path, int *width, int *height);
