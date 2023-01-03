@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/26 23:15:11 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/29 17:14:53 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ typedef struct s_game
 	void		*mlx;
 	void		*mlx_win;
 	char		*argv;
+	int			argv_malloc;
 	t_checkmap	check;
 	t_map		map;
 	t_player	player;
@@ -140,7 +141,8 @@ void	ft_print_list(t_game *g);
 
 /*		srcs/utils.c		*/
 void	init_struct(t_game *g);
-void	ft_path_map(const char *dir, const char *argv, t_game *g);
+void	ft_path_map(const char *dir, char *argv, t_game *g);
+void	ft_check_ber_map(const char *argv);
 void	ft_free_tab(char *tab1, char **tab2);
 void	ft_error(int res, char *tab1, char **tab2, const char *error);
 

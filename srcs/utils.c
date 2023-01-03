@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/26 22:57:22 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/29 17:14:40 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	init_struct(t_game *g)
 	ft_check_map(g);
 }
 
-static void	ft_check_ber_map(const char *argv)
+void	ft_check_ber_map(const char *argv)
 {
 	int	ext_ber;
 
@@ -70,7 +70,7 @@ static void	ft_check_ber_map(const char *argv)
 		ft_error(-1, NULL, NULL, ERR_BAD_EXT);
 }
 
-void	ft_path_map(const char *dir, const char *argv, t_game *g)
+void	ft_path_map(const char *dir, char *argv, t_game *g)
 {
 	int		i;
 	int		j;

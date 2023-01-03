@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 21:31:17 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/19 19:09:44 by aabda            ###   ########.fr       */
+/*   Updated: 2022/12/29 17:16:39 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,28 @@ void	ft_print_map1(t_game *g)
 	}
 }
 
+static void	ft_parse_argv(t_game *g, char *argv)
+{
+	if (ft_strncmp("maps/", argv, 5) == 0)
+	{
+		g->argv_malloc = 0;
+		g->argv = argv;
+		ft_check_ber_map(g->argv);
+	}
+	else
+	{
+		g->argv_malloc = 1;
+		ft_path_map("maps/", argv, g);
+	}
+}
+
 int	main(int argc, const char **argv)
 {
 	t_game	g;
 
 	if (argc == 2)
 	{
-		ft_path_map("maps/", argv[1], &g);
+		ft_parse_argv(&g, (char *)argv[1]);
 		init_struct(&g);
 		printf("\nMap_max_size:\n");
 		printf("max_y = %d\tmax_x = %d\n", g.map.nl, g.map.lenline);
