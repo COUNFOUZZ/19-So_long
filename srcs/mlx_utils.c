@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:45:25 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/18 21:48:09 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/03 14:57:11 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ int	red_cross(void)
 	return (0);
 }
 
-void	ft_img(t_game *g, char *path, int *width, int *height)
-{
-	g->img.path = path;
-	g->img.img = mlx_xpm_file_to_image(g->mlx, g->img.path,
-			width, height);
-}
-
 int	key_pressed(int keycode, t_game *g)
 {
 	ft_movement(keycode, g);
@@ -32,8 +25,5 @@ int	key_pressed(int keycode, t_game *g)
 	ft_print_map1(g);
 	printf("Coin collected : " YELLOW "%d\n" NORMAL, g->player.coin_collected);
 	printf("Nbr_move : %d\n", g->player.move);
-	ft_img(g, "./img/floor.xpm", &(g->img).img_width, &(g->img).img_height);
-	mlx_clear_window(g->mlx, g->mlx_win);
-	mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.img, g->player.pos_x, g->player.pos_y);
 	return (0);
 }
