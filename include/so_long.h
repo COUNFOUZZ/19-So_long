@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/03 17:36:10 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/04 15:43:50 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ void	ft_error(int res, char *tab1, char **tab2, const char *error);
 /*		srcs/libft_utils.c		*/
 void	ft_putstr_fd(const char *s, int fd);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_itoa(int n);
 
 /*		srcs/parsing.c		*/
 void	ft_parsing_map(t_game *g);
@@ -171,9 +172,10 @@ void	ft_init_img(t_game *g);
 void	ft_put_img_map(t_game *g);
 void	ft_put_img(t_game *g, int x, int y, const char c);
 
+/*		srcs/mlx_utils.c		*/
 int		key_pressed(int keycode, t_game *g);
-void	ft_img(t_game *g, char *path, int *width, int *height);
 int		red_cross(void);
+void	ft_print_infos(t_game *g);
 void	ft_print_map1(t_game *g);
 
 #endif

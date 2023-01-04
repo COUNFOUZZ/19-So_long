@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/03 17:13:54 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/04 13:57:29 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ void	ft_free_tab(char *tab1, char **tab2)
 
 void	init_struct(t_game *g)
 {
-	g->mlx = mlx_init();
-	ft_init_img(g);
 	ft_init_lenline_nl(g);
 	g->w_height = g->map.nl * 32;
 	g->w_width = (g->map.lenline - 1) * 32;
-	g->mlx_win = mlx_new_window(g->mlx, g->w_width, g->w_height, GAME_TITLE);
+	g->mlx = mlx_init();
+	ft_init_img(g);
+	g->mlx_win = mlx_new_window(g->mlx, g->w_width, g->w_height + 20, GAME_TITLE);
 	g->player.pos_x = 0;
 	g->player.pos_y = 0;
 	g->player.coin_collected = 0;

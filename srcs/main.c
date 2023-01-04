@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 21:31:17 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/03 17:23:42 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/04 15:44:07 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	ft_print_map1(t_game *g)
 				printf(BLUE "%c" NORMAL, g->map.map[i][j]);
 		}
 	}
+	printf("\n");
 }
 
 static void	ft_parse_argv(t_game *g, char *argv)
@@ -55,6 +56,7 @@ int	main(int argc, const char **argv)
 	{
 		ft_parse_argv(&g, (char *)argv[1]);
 		init_struct(&g);
+		ft_print_infos(&g);
 		ft_print_map1(&g);
 		ft_put_img_map(&g);
 		mlx_hook(g.mlx_win, 17, 0, &red_cross, &g);

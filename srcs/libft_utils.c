@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 17:47:40 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/29 16:58:06 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/04 14:12:09 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,51 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+
+static int	ft_len(long int nb)
+{
+	int	i;
+
+	i = 0;
+	if (nb == 0)
+		return (1);
+	if (nb < 0)
+	{
+		nb *= -1;
+		i++;
+	}
+	while (nb != 0)
+	{
+		nb /= 10;
+		i++;
+	}
+	return (i);
+}
+
+char	*ft_itoa(int n)
+{
+	long int	nbr;
+	size_t		len;
+	char		*str;
+
+	nbr = n;
+	len = ft_len(nbr);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	str[len--] = '\0';
+	if (nbr == 0)
+		str[0] = '0';
+	if (nbr < 0)
+	{
+		str[0] = '-';
+		nbr *= -1;
+	}
+	while (nbr > 0)
+	{
+		str[len--] = nbr % 10 + '0';
+		nbr /= 10;
+	}
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 14:06:19 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/03 18:35:25 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/04 14:00:16 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,19 +29,19 @@ void	ft_init_img(t_game *g)
 void	ft_put_img(t_game *g, int x, int y, const char c)
 {
 	if (c == '1')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.wall, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.wall, y * 32, (x * 32) + 20);
 	if (c == '0')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.floor, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.floor, y * 32, (x * 32) + 20);
 	if (c == 'P')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.player_floor, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.player_floor, y * 32, (x * 32) + 20);
 	if (c == 'C')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.coin, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.coin, y * 32, (x * 32) + 20);
 	if (c == 'E')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.dclose, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.dclose, y * 32, (x * 32) + 20);
 	if (c == 'e')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.dopen, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.dopen, y * 32, (x * 32) + 20);
 	if (c == 'p')
-		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.player_exit, y * 32, x * 32);
+		mlx_put_image_to_window(g->mlx, g->mlx_win, g->img.player_exit, y * 32, (x * 32) + 20);
 }
 
 void	ft_put_img_map(t_game *g)
