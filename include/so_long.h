@@ -64,6 +64,7 @@ If you want to create your own map, please use only :\n\
 \t- \"C\" for the collectible.\n\
 \t- \"E\" for the exit.\n"
 # define ERR_INIT_IMG "Missing img !"
+# define ERR_PATH_FINDING "The map is imposible to be finished. Unreachable output or collectible"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
@@ -94,6 +95,7 @@ typedef struct s_checkmap
 typedef struct s_map
 {
 	char	**map;
+	char	**cp_map;
 	int		nl;
 	int		lenline;
 }	t_map;
@@ -166,5 +168,9 @@ int		key_pressed(int keycode, t_game *g);
 int		red_cross(void);
 void	ft_print_infos(t_game *g);
 void	ft_print_map1(t_game *g);
+
+/*		srcs/pathfinding.c		*/
+void	ft_cp_map(t_game *g);
+int		ft_path_finding(t_game *g, int y, int x);
 
 #endif
