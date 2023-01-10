@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 22:11:34 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 14:25:25 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/10 19:37:46 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	init_struct(t_game *g)
 	g->w_height = g->map.nl * 32;
 	g->w_width = (g->map.lenline - 1) * 32;
 	g->mlx = mlx_init();
-	ft_init_img(g);
 	g->mlx_win = mlx_new_window(g->mlx, g->w_width, g->w_height + 20, GAME_TITLE);
 	g->player.pos_x = 0;
 	g->player.pos_y = 0;
@@ -60,6 +59,7 @@ void	init_struct(t_game *g)
 	g->check.exit_pos_x = 0;
 	g->check.exit_pos_y = 0;
 	ft_check_map(g);
+	ft_init_img(g);
 }
 
 void	ft_check_ber_map(const char *argv)

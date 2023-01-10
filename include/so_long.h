@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 14:13:07 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/10 19:37:02 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ If you want to create your own map, please use only :\n\
 \t- \"C\" for the collectible.\n\
 \t- \"E\" for the exit.\n"
 # define ERR_INIT_IMG "Missing img !"
-# define ERR_PATH_FINDING "The map is imposible to be finished. Unreachable output or collectible"
+# define ERR_PATH_FINDING "The map is not playable. \
+Unreachable output or collectible !"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
