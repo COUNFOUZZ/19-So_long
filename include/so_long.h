@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/04 15:43:50 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/10 14:13:07 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,21 +81,14 @@ If you want to create your own map, please use only :\n\
 # define KEY_LEFT 123
 # define KEY_RIGHT 124
 
-typedef struct s_pos_coins
-{
-	int					x;
-	int					y;
-	struct s_pos_coins	*next;
-}	t_pos_coin;
-
 typedef struct s_checkmap
 {
-	int			nbr_coin;
-	int			nbr_player;
-	int			nbr_exit;
-	int			exit_pos_x;
-	int			exit_pos_y;
-	t_pos_coin	*head;
+	int	nbr_coin;
+	int	nbr_player;
+	int	nbr_exit;
+	int	exit_pos_x;
+	int	exit_pos_y;
+	int	total_obj;
 }	t_checkmap;
 
 typedef struct s_map
@@ -140,10 +133,6 @@ typedef struct s_game
 	t_player	player;
 	t_img		img;
 }	t_game;
-
-/*		srcs/check_coin.c		*/
-void	ft_add_back(t_game *g, int x, int y);
-void	ft_print_list(t_game *g);
 
 /*		srcs/utils.c		*/
 void	init_struct(t_game *g);
