@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 14:13:07 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/10 19:34:07 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-
-/******************************************************************************/
-/*								NEED TO BE DELETE							  */
-/******************************************************************************/
-# include <stdio.h>			//	Need to be delete !!!
-# define BLACK "\x1b[30m"	//	Need to be delete !!!
-# define RED "\x1b[31m"		//	Need to be delete !!!
-# define GREEN "\x1b[32m"	//	Need to be delete !!!
-# define YELLOW "\x1b[33m"	//	Need to be delete !!!
-# define BLUE "\x1b[34m"	//	Need to be delete !!!
-# define PURPLE "\x1b[35m"	//	Need to be delete !!!
-# define CYAN "\x1b[36m"	//	Need to be delete !!!
-# define WHITE "\x1b[37m"	//	Need to be delete !!!
-# define NORMAL "\x1b[m"	//	Need to be delete !!!
 
 /******************************************************************************/
 /*								BASIC SETTINGS								  */
@@ -64,7 +50,10 @@ If you want to create your own map, please use only :\n\
 \t- \"C\" for the collectible.\n\
 \t- \"E\" for the exit.\n"
 # define ERR_INIT_IMG "Missing img !"
-# define ERR_PATH_FINDING "The map is imposible to be finished. Unreachable output or collectible"
+# define ERR_PATH_FINDING "The map is not playable. \
+Unreachable exit or collectible !\n"
+# define ERR_MLX_INIT "mlx_init error !"
+# define ERR_MLX_WIN "mlx_new_window error !"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
@@ -167,7 +156,6 @@ void	ft_put_img(t_game *g, int x, int y, const char c);
 int		key_pressed(int keycode, t_game *g);
 int		red_cross(void);
 void	ft_print_infos(t_game *g);
-void	ft_print_map1(t_game *g);
 
 /*		srcs/pathfinding.c		*/
 void	ft_cp_map(t_game *g);

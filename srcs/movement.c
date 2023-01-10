@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:54:56 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/20 10:54:22 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:40:51 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ static void	ft_movement_y(char key, t_game *g)
 		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
-		g->map.map[g->player.pos_y + 1][g->player.pos_x] = g->player.char_staged;
+		g->map.map[g->player.pos_y + 1][g->player.pos_x] = \
+		g->player.char_staged;
 	}
 	else if (key == 'S')
 	{
@@ -40,7 +41,8 @@ static void	ft_movement_y(char key, t_game *g)
 		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
-		g->map.map[g->player.pos_y - 1][g->player.pos_x] = g->player.char_staged;
+		g->map.map[g->player.pos_y - 1][g->player.pos_x] = \
+		g->player.char_staged;
 	}
 }
 
@@ -52,7 +54,8 @@ static void	ft_movement_x(char key, t_game *g)
 		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
-		g->map.map[g->player.pos_y][g->player.pos_x - 1] = g->player.char_staged;
+		g->map.map[g->player.pos_y][g->player.pos_x - 1] = \
+		g->player.char_staged;
 	}
 	else if (key == 'A')
 	{
@@ -60,14 +63,16 @@ static void	ft_movement_x(char key, t_game *g)
 		g->player.move++;
 		ft_exit_and_coin_collect(g);
 		g->map.map[g->player.pos_y][g->player.pos_x] = 'P';
-		g->map.map[g->player.pos_y][g->player.pos_x + 1] = g->player.char_staged;
+		g->map.map[g->player.pos_y][g->player.pos_x + 1] = \
+		g->player.char_staged;
 	}
 }
 
 void	ft_movement(int keycode, t_game *g)
 {
 	g->player.char_staged = '0';
-	if (g->map.map[g->player.pos_y][g->player.pos_x] == g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
+	if (g->map.map[g->player.pos_y][g->player.pos_x] ==
+		g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
 			g->player.char_staged = 'E';
 	if (keycode == KEY_ESC)
 		exit (0);

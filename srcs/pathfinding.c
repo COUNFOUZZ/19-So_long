@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 13:49:45 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 14:30:20 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/10 15:49:27 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,7 @@ int	ft_path_finding(t_game *g, int y, int x)
 	right = g->map.cp_map[y][x + 1];
 	if (g->map.cp_map[y][x] == 'C' || g->map.cp_map[y][x] == 'E')
 		g->check.total_obj--;
-	printf("%d\n", g->check.total_obj);
 	g->map.cp_map[y][x] = '9';
-	for (int i = 0; g->map.cp_map[i]; i++)
-		printf("%s", g->map.cp_map[i]);
 	if (up != '1' && up != '9')
 		ft_path_finding(g, y - 1, x);
 	if (down != '1' && down != '9')
