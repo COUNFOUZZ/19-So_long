@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:54:56 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 15:40:51 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 12:05:52 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ static void	ft_movement_x(char key, t_game *g)
 
 void	ft_movement(int keycode, t_game *g)
 {
+	if (g->player.move >= INT_MAX)
+		g->player.move = 0;
 	g->player.char_staged = '0';
 	if (g->map.map[g->player.pos_y][g->player.pos_x] ==
 		g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
