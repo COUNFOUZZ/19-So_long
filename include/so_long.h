@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 19:34:07 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 12:13:22 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include <limits.h>
 
 /******************************************************************************/
 /*								BASIC SETTINGS								  */
@@ -54,6 +55,7 @@ If you want to create your own map, please use only :\n\
 Unreachable exit or collectible !\n"
 # define ERR_MLX_INIT "mlx_init error !"
 # define ERR_MLX_WIN "mlx_new_window error !"
+# define ERR_COIN_INT_MAX "Your numbers of coins exceed the int max !"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
