@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 14:06:19 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 15:24:11 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 22:13:40 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ void	ft_init_img(t_game *g)
 			"./img/dopen.xpm", &g->img.img_width, &g->img.img_height);
 	if (!g->img.coin || !g->img.dclose || !g->img.dopen || !g->img.floor
 		|| !g->img.player_exit || !g->img.player_floor || !g->img.wall)
+	{
+		ft_destroy_all_img(g);
 		ft_error(-1, NULL, NULL, ERR_INIT_IMG);
+	}
 }
 
 void	ft_put_img(t_game *g, int x, int y, const char c)
@@ -92,4 +95,22 @@ void	ft_put_img_map(t_game *g)
 		while (g->map.map[i][++j])
 			ft_put_img_map2(g, i, j);
 	}
+}
+
+void	ft_destroy_all_img(t_game *g)
+{
+	if (g->img.coin)
+		mlx_destroy_image(g->mlx, g->img.coin);
+	if (g->img.dclose)
+		mlx_destroy_image(g->mlx, g->img.dclose);
+	if (g->img.dopen)
+		mlx_destroy_image(g->mlx, g->img.dopen);
+	if (g->img.floor)
+		mlx_destroy_image(g->mlx, g->img.floor);
+	if (g->img.player_exit)
+		mlx_destroy_image(g->mlx, g->img.player_exit);
+	if (g->img.player_floor)
+		mlx_destroy_image(g->mlx, g->img.player_floor);
+	if (g->img.wall)
+		mlx_destroy_image(g->mlx, g->img.wall);
 }

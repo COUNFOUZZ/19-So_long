@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 21:31:17 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 15:15:43 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 22:07:31 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,13 @@ int	main(int argc, const char **argv)
 		mlx_hook(g.mlx_win, 17, 0, &red_cross, &g);
 		mlx_hook(g.mlx_win, X_EVENT_KEY_PRESS, 0, &key_pressed, &g);
 		mlx_loop(g.mlx);
+		ft_destroy_all_img(&g);
 		ft_free_tab(NULL, g.map.map);
 	}
 	else
+	{
+		ft_destroy_all_img(&g);
 		ft_error(-1, NULL, NULL, ERR_BAD_ARG);
+	}
 	return (0);
 }

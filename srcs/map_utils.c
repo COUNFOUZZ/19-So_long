@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 12:12:34 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 22:42:47 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,5 @@ void	ft_check_map(t_game *g)
 	ft_err_check_map(g);
 	if (ft_path_finding(g, g->player.pos_y, g->player.pos_x) < 0)
 		ft_error(-1, NULL, g->map.map, ERR_PATH_FINDING);
+	ft_free_tab(NULL, g->map.cp_map);
 }

@@ -6,7 +6,7 @@
 #    By: aabda <aabda@student.s19.be>               +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/03 20:58:10 by aabda             #+#    #+#              #
-#    Updated: 2023/01/10 14:09:26 by aabda            ###   ########.fr        #
+#    Updated: 2023/01/12 22:36:11 by aabda            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ DIR		= srcs/
 GNL		= gnl/
 MLX		= ./mlx/libmlx.a
 CC		= gcc
-FLAGS	= -Wall 
+FLAGS	= -Wall -Werror -Wextra
 MFLAGS	= -L./mlx -lmlx -framework OpenGL -framework AppKit
 
 SRCS = $(GNL)get_next_line.c $(GNL)get_next_line_utils.c \
@@ -23,7 +23,7 @@ SRCS = $(GNL)get_next_line.c $(GNL)get_next_line_utils.c \
 	$(DIR)parsing.c $(DIR)libft_utils.c \
 	$(DIR)map_utils.c $(DIR)mlx_utils.c \
 	$(DIR)movement.c $(DIR)img.c \
-	$(DIR)pathfinding.c
+	$(DIR)pathfinding.c $(DIR)print_steps_coins.c
 
 OBJS = $(SRCS:.c=.o)
 

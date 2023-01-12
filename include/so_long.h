@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 12:13:22 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 22:45:09 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,17 +31,18 @@
 # define ERR_BAD_ARG "Invalid number of arguments !\n\
 You can find all maps in \"maps\" directory\n\
 The program should be launched like this -> \"./so_long MapName.ber\"\n"
-# define ERR_PATH "The map does not exist !\n"
+# define ERR_PATH "The map does not exist !\n You can only put the map in \
+map directory !\n"
 # define ERR_BAD_EXT "Wrong extension file !\n\
 All maps must have the extension .ber\n"
 # define ERR_NBR_PLAYER1 "Too much player on the map !\n\
-Only one player on the map is allowed"
+Only one player on the map is allowed\n"
 # define ERR_NBR_PLAYER2 "Not enough players on the map !\n\
-Only one player on the map is allowed"
+Only one player on the map is allowed\n"
 # define ERR_NBR_EXIT1 "Too much exit on the map !\n\
-Only one exit on the map is allowed"
+Only one exit on the map is allowed\n"
 # define ERR_NBR_EXIT2 "Not enough exit on the map !\n\
-Only one exit on the map is allowed"
+Only one exit on the map is allowed\n"
 # define ERR_MISSING_WALL "The map is not totally closed by walls !\n"
 # define ERR_UKNOWN_CHAR_MAP "Unknown character in the parsing of the map !\n\
 If you want to create your own map, please use only :\n\
@@ -50,12 +51,13 @@ If you want to create your own map, please use only :\n\
 \t- \"P\" for the player.\n\
 \t- \"C\" for the collectible.\n\
 \t- \"E\" for the exit.\n"
-# define ERR_INIT_IMG "Missing img !"
+# define ERR_INIT_IMG "Missing img !\n"
 # define ERR_PATH_FINDING "The map is not playable. \
 Unreachable exit or collectible !\n"
-# define ERR_MLX_INIT "mlx_init error !"
-# define ERR_MLX_WIN "mlx_new_window error !"
-# define ERR_COIN_INT_MAX "Your numbers of coins exceed the int max !"
+# define ERR_MLX_INIT "mlx_init error !\n"
+# define ERR_MLX_WIN "mlx_new_window error !\n"
+# define ERR_COIN_INT_MAX "Your numbers of coins exceed the int max !\n"
+# define ERR_MEMORY "No enough memory !\n"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */
@@ -153,10 +155,13 @@ void	ft_movement(int keycode, t_game *g);
 void	ft_init_img(t_game *g);
 void	ft_put_img_map(t_game *g);
 void	ft_put_img(t_game *g, int x, int y, const char c);
+void	ft_destroy_all_img(t_game *g);
 
 /*		srcs/mlx_utils.c		*/
 int		key_pressed(int keycode, t_game *g);
-int		red_cross(void);
+int		red_cross(t_game *g);
+
+/*		srcs/print_steps_coins.c		*/
 void	ft_print_infos(t_game *g);
 
 /*		srcs/pathfinding.c		*/

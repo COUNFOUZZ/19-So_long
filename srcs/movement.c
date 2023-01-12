@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:54:56 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 12:05:52 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 22:01:29 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ static void	ft_exit_and_coin_collect(t_game *g)
 	&& g->check.nbr_coin == g->player.coin_collected)
 	{
 		ft_free_tab(NULL, g->map.map);
+		ft_destroy_all_img(g);
 		exit(EXIT_SUCCESS);
 	}
 }
