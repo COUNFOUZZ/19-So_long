@@ -6,11 +6,10 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 22:42:47 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/14 15:43:39 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "../include/so_long.h"
 
 static void	ft_check_wall(t_game *g)
