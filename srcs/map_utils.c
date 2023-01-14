@@ -6,10 +6,11 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/10 19:37:43 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/12 22:42:47 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "../include/so_long.h"
 
 static void	ft_check_wall(t_game *g)
@@ -47,6 +48,8 @@ static void	ft_err_check_map(t_game *g)
 
 static void	ft_init_pos_and_nbr_coins(t_game *g, char check, int x, int y)
 {
+	if (g->check.nbr_coin > INT_MAX)
+		ft_error(-1, NULL, g->map.map, ERR_COIN_INT_MAX);
 	if (check == 'P')
 	{
 		g->check.nbr_player++;
@@ -86,11 +89,6 @@ void	ft_check_map(t_game *g)
 	ft_cp_map(g);
 	ft_err_check_map(g);
 	if (ft_path_finding(g, g->player.pos_y, g->player.pos_x) < 0)
-		ft_error(-1, NULL, g->map.map, "ERR_PATH_FINDING");
-	printf("\nExit_pos:\n");
-	printf("y = %d\tx = %d\n", g->check.exit_pos_y, g->check.exit_pos_x);
-	printf("\nPlayer_pos:\n");
-	printf("y = %d\tx = %d\n", g->player.pos_y, g->player.pos_x);
-	printf("\nNbr_coins:\n");
-	printf("coins = %d\n", g->check.nbr_coin);
+		ft_error(-1, NULL, g->map.map, ERR_PATH_FINDING);
+	ft_free_tab(NULL, g->map.cp_map);
 }
