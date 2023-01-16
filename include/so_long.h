@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 22:45:09 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/16 13:52:23 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 You can find all maps in \"maps\" directory\n\
 The program should be launched like this -> \"./so_long MapName.ber\"\n"
 # define ERR_PATH "The map does not exist !\n You can only put the map in \
-map directory !\n"
+maps directory !\n"
 # define ERR_BAD_EXT "Wrong extension file !\n\
 All maps must have the extension .ber\n"
 # define ERR_NBR_PLAYER1 "Too much player on the map !\n\

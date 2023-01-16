@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 21:31:17 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 22:07:31 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/16 13:54:52 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,6 @@ int	main(int argc, const char **argv)
 		ft_free_tab(NULL, g.map.map);
 	}
 	else
-	{
-		ft_destroy_all_img(&g);
 		ft_error(-1, NULL, NULL, ERR_BAD_ARG);
-	}
 	return (0);
 }

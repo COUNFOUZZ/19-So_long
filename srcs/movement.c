@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 23:54:56 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/12 22:01:29 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/16 13:58:39 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_movement(int keycode, t_game *g)
 		g->map.map[g->check.exit_pos_y][g->check.exit_pos_x])
 			g->player.char_staged = 'E';
 	if (keycode == KEY_ESC)
-		exit (0);
+		exit(EXIT_SUCCESS);
 	else if (g->map.map[g->player.pos_y - 1][g->player.pos_x] != '1'
 			&& (keycode == KEY_W || keycode == KEY_UP))
 		ft_movement_y('W', g);
