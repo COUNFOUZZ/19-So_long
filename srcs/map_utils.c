@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 20:54:07 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/14 15:43:39 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/18 16:58:52 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static void	ft_check_wall(t_game *g)
 		j = -1;
 		while (++j < g->map.lenline - 1)
 		{
-			if (g->map.map[0][j] != '1'
+			if (!g->map.map[i][j]
+				|| g->map.map[0][j] != '1'
 				|| g->map.map[g->map.nl - 1][j] != '1'
 				|| g->map.map[i][0] != '1'
 				|| g->map.map[i][g->map.lenline - 2] != '1')
