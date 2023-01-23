@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 00:11:27 by aabda             #+#    #+#             */
-/*   Updated: 2023/01/16 13:52:23 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/23 18:38:03 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ Unreachable exit or collectible !\n"
 # define ERR_MLX_WIN "mlx_new_window error !\n"
 # define ERR_COIN_INT_MAX "Your numbers of coins exceed the int max !\n"
 # define ERR_MEMORY "No enough memory !\n"
+# define ERR_EMPTY_MAP "The map is empty\n"
 
 /******************************************************************************/
 /*								MACRO KEYCODE								  */

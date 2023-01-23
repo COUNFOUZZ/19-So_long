@@ -6,7 +6,7 @@
 /*   By: aabda <aabda@student.s19.be>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/04 14:58:01 by aabda             #+#    #+#             */
-/*   Updated: 2022/12/29 17:03:11 by aabda            ###   ########.fr       */
+/*   Updated: 2023/01/23 18:32:17 by aabda            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,20 @@ void	ft_init_lenline_nl(t_game *g)
 {
 	char	*str;
 	int		fd;
+	int		check;
 
 	g->map.lenline = 0;
 	g->map.nl = 0;
 	fd = open(g->argv, O_RDONLY);
 	if (fd < 0)
 		ft_error(fd, NULL, NULL, ERR_PATH);
+	check = 0;
 	while (1)
 	{
 		str = get_next_line(fd);
+		if (!str && check == 0)
+			ft_error(-1, NULL, NULL, ERR_EMPTY_MAP);
+		check = 1;
 		if (g->map.lenline == 0)
 			g->map.lenline = ft_strlen(str);
 		if (!str)
